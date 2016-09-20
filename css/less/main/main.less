@@ -1,0 +1,117 @@
+// out: main.css, compress: true
+@primary: #00bbff;
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  margin:0;
+}
+
+.container{
+  width:100%;
+
+  /*-- our cleafix hack -- */
+  .row:before,
+  .row:after {
+      content:"";
+      display: table;
+      clear:both;
+  }
+
+  // inside our cols
+  .irow:before,
+  .irow:after {
+      content:"";
+      display: table;
+      clear:both;
+  }
+
+
+  // Containers
+  [class*='cont_']{
+    float: left;
+    min-height: 1px;
+    width: 16.66%;
+  }
+
+  .cont_sixth{
+    width: 16.66%;
+  }
+  .cont_third{
+    width: 33.33%;
+  }
+  .cont_fourth{
+    width: 25%;
+  }
+  .cont_half{
+    width: 50%;
+  }
+  .cont_two-thirds{
+    width: 66.664%;
+  }
+
+  .cont_full{
+    width: 100%;
+  }
+
+
+  .padding{
+    padding:20px;
+  }
+  .centered{
+    text-align:center;
+  }
+  .noFloatCenter{
+    float:none;
+    display:inline-block;
+    vertical-align: top;
+  }
+
+  @media all and (max-width:800px){
+        .cont_sixth { width: 33.33%; }
+        .cont_two-thirds { width: 50%; }
+        .cont_third { width: 50%; }
+        .cont_fourth { width: 50%; }
+        .col-4{ width: 100%;    }
+        .col-5{ width: 100%;    }
+        .col-6{ width: 100%;      }
+
+        .row .col-2:last-of-type{
+            width: 100%;
+        }
+
+        .row .col-5 ~ .col-1{
+            width: 100%;
+        }
+
+        .irow .col-2:last-of-type{
+            width: 100%;
+        }
+
+        .irow .col-5 ~ .col-1{
+            width: 100%;
+        }
+
+        .noFloatCenter{
+          float:left;
+        }
+
+      }
+
+  @media all and (max-width:600px){
+        .cont_sixth { width: 50%; }
+        .cont_two-thirds { width: 100%; }
+        .cont_third { width: 100%; }
+        .cont_fourth { width: 100%; }
+        .col-4{ width: 100%;    }
+        .col-5{ width: 100%;    }
+        .col-6{ width: 100%;      }
+  }
+
+
+}

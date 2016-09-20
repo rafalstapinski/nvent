@@ -1,0 +1,56 @@
+// out: spec.css, compress: false
+@import './fullPage.less';
+@import './message.less';
+@import './firstSection.less';
+@import './services.less';
+@import './ourWork.less';
+
+@boldBackground: #303030;
+@lightText: #e0e0e0;
+@primary: #00bbff;
+@paraText: #808080;
+@hind: 'Hind';
+
+#footer{
+  background: @boldBackground;
+  padding-top:20px;
+  padding-bottom:20px;
+  color:@lightText;
+}
+
+.menu{
+
+}
+
+
+body{
+  font-family: 'Roboto Slab';
+}
+
+.backgroundCover{
+  -webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.transition{
+  transition: 0.2s ease all;
+}
+
+.doIt{
+  width:200px;
+	margin:auto;
+	font-size: 24px;
+	margin-top:30px;
+	padding:10px;
+	padding-bottom:9px;
+	border:5px solid #303030;
+	cursor:pointer;
+	.transition;
+}
+
+.doIt:hover{
+  background:#303030;
+  color:#fff;
+}
