@@ -19,6 +19,12 @@
   -o-background-size: cover;
   background-size: cover;
 }
+
+.ptag{
+  font-family:'Raleway', sans-serif;
+  font-size: 1.2em;
+  line-height: 2em;
+}
 // spec
 .menu{
   position:absolute;
@@ -131,10 +137,8 @@
       font-weight:normal;
     }
     p{
-      font-family: 'Raleway', sans-serif;
-      font-size:1.2em;
+      .ptag;
       color: gray;
-      line-height:2em;
     }
   }
 
@@ -170,6 +174,7 @@
   }
   img{
     width:100%;
+    padding-top:70px;
     margin-bottom:-5px;
   }
 
@@ -188,5 +193,62 @@
 }
 
 .port_content{
-  .max_width;
+  background: url(../images/debut_light.png) center center;
+  .port_view{
+    .max_width;
+    padding-bottom:0;
+    text-align:center;
+    font-family:'Dosis', sans-serif;
+
+    h2{
+      font-size:4em;
+      font-weight:normal;
+      margin:0;
+      color:@brown;
+    }
+    p{
+      .ptag;
+      color:gray;
+      margin:0;
+      span{
+        color:@primary_dark;
+      }
+    }
+  }
+
+}
+
+.slider{
+  padding-top:20px;
+  padding-bottom:100px;
+  background:url('../images/debut_light.png') center center;
+  .slider_view{
+    text-align:center;
+
+    p{
+      font-family:'Dosis', sans-serif;
+      color:gray;
+    }
+    .slider_left, .slider_right{
+      display:inline-block;
+      vertical-align: middle;
+      padding:15px;
+      color:@primary;
+      border-radius:5px;
+      line-height:80px;
+      font-size:3em;
+      opacity:0.8;
+      cursor:pointer;
+      transition: 0.2s ease-in-out;
+      &:hover{ opacity: 1.0; }
+    }
+    .slider_content{
+      width:calc(100% - 20px);
+      display:inline-block;
+      vertical-align: middle;
+
+      img{ width: 100%; }
+    }
+
+  }
 }
