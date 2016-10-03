@@ -81,7 +81,7 @@
     padding-bottom:20px;
   }
   .smalltext{
-    font-family:'Indie Flower', sans-serif;
+    font-family:'Indie Flower', cursive;
     font-size:2em;
     color:@brown;
     padding-bottom:25px;
@@ -201,7 +201,7 @@
     font-family:'Dosis', sans-serif;
 
     h2{
-      font-size:4em;
+      font-size:3em;
       font-weight:normal;
       margin:0;
       color:@brown;
@@ -233,17 +233,17 @@
       display:inline-block;
       vertical-align: middle;
       padding:15px;
-      color:@primary;
+      color:@primary_dark;
       border-radius:5px;
       line-height:80px;
-      font-size:3em;
+      font-size:5em;
       opacity:0.8;
       cursor:pointer;
       transition: 0.2s ease-in-out;
       &:hover{ opacity: 1.0; }
     }
     .slider_content{
-      width:calc(100% - 20px);
+      width:calc(100% - 15px);
       display:inline-block;
       vertical-align: middle;
 
@@ -251,4 +251,60 @@
     }
 
   }
+}
+
+.appeal{
+  background:url('../images/devices.jpg') center center;
+  .cover_background;
+  .appeal_content{
+    .max_width;
+    .left_pos{
+      display:inline-block;
+      width:calc(50% - 5px);
+      vertical-align: middle;
+      h2{
+        color:@primary;
+        font-family:'Dosis', sans-serif;
+        font-size:3em;
+        font-weight:normal;
+        margin:0;
+      }
+      p{
+        .ptag;
+        color:#FFF;
+      }
+      span{
+        color:@primary;
+      }
+    }
+    .right_pos{
+      display:inline-block;
+      width:50%;
+      vertical-align: middle;
+      padding:30px 0px 0px 50px;
+      text-align:center;
+      .quote{
+        color:#fff;
+        font-size:1.4em;
+        font-family:'Shadows Into Light', cursive;
+        text-align:center;
+        span{
+
+        }
+      }
+      .quote_author{
+        text-align:right;
+        color:#fff;
+        font-family:'Raleway', sans-serif;
+
+        .quote_site{
+          color: @primary;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+
 }
