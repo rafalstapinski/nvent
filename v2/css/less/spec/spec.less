@@ -135,6 +135,7 @@
       font-family:'Dosis', sans-serif;
       font-size: 2.5em;
       font-weight:normal;
+      color:@brown;
     }
     p{
       .ptag;
@@ -184,7 +185,7 @@
 
   .link{
     .fullpage_splash.button;
-    background:@primary;
+    background:@primary_dark;
     color:#FFF;
     width:250px;
     margin:50px auto 50px auto;
@@ -220,7 +221,7 @@
 
 .slider{
   padding-top:20px;
-  padding-bottom:100px;
+  padding-bottom:170px;
   background:url('../images/debut_light.png') center center;
   .slider_view{
     text-align:center;
@@ -263,7 +264,7 @@
       width:calc(50% - 5px);
       vertical-align: middle;
       h2{
-        color:@primary;
+        color:#FFF;
         font-family:'Dosis', sans-serif;
         font-size:3em;
         font-weight:normal;
@@ -275,6 +276,22 @@
       }
       span{
         color:@primary;
+      }
+      .button{
+        color:#fff;
+        width:220px;
+        height:60px;
+        border-radius:3px;
+        font-size:20px;
+        line-height:20px;
+        padding:20px;
+        opacity:0.8;
+        text-align:center;
+        font-family:'Dosis', sans-serif;
+        background: @primary_dark;
+        transition: 0.2s ease-in-out;
+        cursor:pointer;
+        &:hover {opacity:1.0;}
       }
     }
     .right_pos{
@@ -307,4 +324,115 @@
   }
 
 
+}
+
+.footer{
+  background:#222;
+  .footer_content{
+    .max_width;
+    padding:50px 30px 50px 30px;
+
+    h3{
+      font-family:'Dosis', sans-serif;
+      font-weight:normal;
+      font-size:2em;
+      color:#FFF;
+      margin:0;
+    }
+
+    .footer_right{
+      display:inline-block;
+      width:calc(50% - 10px);
+      vertical-align: top;
+      padding-left:50px;
+      .about{
+        .about_content{
+          p{
+            .ptag;
+            font-size:1.1em;
+            color:#c3c3c3;
+          }
+          span{
+            color:@primary;
+          }
+          .lol{
+            color:#404040;
+          }
+        }
+      }
+    }
+
+    .footer_left{
+      display:inline-block;
+      width:50%;
+      vertical-align: top;
+      padding-right:30px;
+      .social{
+        .social_content{
+          .ptag;
+          font-size:1.1em;
+          color:#c3c3c3;
+          .social_form{
+            margin-top:30px;
+
+            form{
+              input{
+                display:block;
+                width:100%;
+                border:none;
+                border:2px solid #303030;
+                background:#303030;
+                padding:15px;
+                margin-bottom:5px;
+                color:#FFF;
+                font-family:'Pavanam', sans-serif;
+                font-size:1.1em;
+                transition:0.2s ease-in-out;
+                &:focus{
+                  outline:none;
+                  border:2px solid @primary;
+                }
+              }
+
+              textarea{
+                font-family:'Pavanam', sans-serif;
+                font-size:1.1em;
+                width:100%;
+                display:block;
+                border:none;
+                border: 2px solid #303030;
+                background:#303030;
+                padding:15px;
+                margin-bottom:8px;
+                color:#FFF;
+                height:200px;
+                transition:0.2s ease-in-out;
+                &:focus{
+                  outline:none;
+                  border:2px solid @primary;
+                }
+              }
+
+              button{
+                width:100%;
+                background:@primary_dark;
+                color:#FFF;
+                border:none;
+                transition: 0.2s ease-in-out;
+                opacity:0.8;
+                padding:15px;
+                cursor:pointer;
+                font-size:1.1em;
+                font-family:'Pavanam', sans-serif;
+                &:hover{
+                  opacity: 1.0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
 }
