@@ -1,0 +1,314 @@
+// out: animations.css, compress: true
+//vars
+@supersnail: 5s; //supersnail is for testing
+@snail: 1.6s;
+@slow: 1.2s;
+@normal: 0.8s;
+@fast: 0.4s;
+@wtf: 0.1s;
+// dont touch this unless u kno wat ur doin m8y
+.postAnimTranslate {
+	opacity: 1;
+	-moz-transform: translate3d(0px, 0px, 0px);
+	-webkit-transform: translate3d(0px, 0px, 0px);
+	-o-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate3d(0px, 0px, 0px);
+}
+
+.postAnimScale {
+	opacity: 1;
+	transform: scale(1, 1);
+	transform: scale(1, 1);
+	-webkit-transform: scale(1, 1);
+	-webkit-transform: scale(1, 1);
+}
+
+// transition speeds
+
+// ease
+.ease-snail {
+	opacity: 0;
+	-moz-transition: all @snail ease;
+	-webkit-transition: all @snail ease;
+	-o-transition: all @snail ease;
+	transition: all @snail ease;
+}
+
+.ease-slow {
+	opacity: 0;
+	-moz-transition: all @slow ease;
+	-webkit-transition: all @slow ease;
+	-o-transition: all @slow ease;
+	transition: all @slow ease;
+}
+
+.ease-normal {
+	opacity: 0;
+	-moz-transition: all @normal ease;
+	-webkit-transition: all @normal ease;
+	-o-transition: all @normal ease;
+	transition: all @normal ease;
+}
+
+.ease-fast {
+	opacity: 0;
+	-moz-transition: all @fast ease;
+	-webkit-transition: all @fast ease;
+	-o-transition: all @fast ease;
+	transition: all @fast ease;
+}
+
+.ease-wtf {
+	opacity: 0;
+	-moz-transition: all @wtf ease;
+	-webkit-transition: all @wtf ease;
+	-o-transition: all @wtf ease;
+	transition: all @wtf ease;
+}
+
+// ease-in-out
+
+.ease-io-snail {
+	opacity: 0;
+	-moz-transition: all @snail ease-in-out;
+	-webkit-transition: all @snail ease-in-out;
+	-o-transition: all @snail ease-in-out;
+	transition: all @snail ease-in-out;
+}
+
+.ease-io-slow {
+	opacity: 0;
+	-moz-transition: all @slow ease-in-out;
+	-webkit-transition: all @slow ease-in-out;
+	-o-transition: all @slow ease-in-out;
+	transition: all @slow ease-in-out;
+}
+
+.ease-io-normal {
+	opacity: 0;
+	-moz-transition: all @normal ease-in-out;
+	-webkit-transition: all @normal ease-in-out;
+	-o-transition: all @normal ease-in-out;
+	transition: all @normal ease-in-out;
+}
+
+.ease-io-fast {
+	opacity: 0;
+	-moz-transition: all @fast ease-in-out;
+	-webkit-transition: all @fast ease-in-out;
+	-o-transition: all @fast ease-in-out;
+	transition: all @fast ease-in-out;
+}
+
+.ease-io-wtf {
+	opacity: 0;
+	-moz-transition: all @wtf ease-in-out;
+	-webkit-transition: all @wtf ease-in-out;
+	-o-transition: all @wtf ease-in-out;
+	transition: all @wtf ease-in-out;
+}
+
+// ease-in-out
+
+.ease-i-snail {
+	opacity: 0;
+	-moz-transition: all @snail ease-in;
+	-webkit-transition: all @snail ease-in;
+	-o-transition: all @snail ease-in;
+	transition: all @snail ease-in;
+}
+
+.ease-i-slow {
+	opacity: 0;
+	-moz-transition: all @slow ease-in;
+	-webkit-transition: all @slow ease-in;
+	-o-transition: all @slow ease-in;
+	transition: all @slow ease-in;
+}
+
+.ease-i-normal {
+	opacity: 0;
+	-moz-transition: all @normal ease-in;
+	-webkit-transition: all @normal ease-in;
+	-o-transition: all @normal ease-in;
+	transition: all @normal ease-in;
+}
+
+.ease-i-fast {
+	opacity: 0;
+	-moz-transition: all @fast ease-in;
+	-webkit-transition: all @fast ease-in;
+	-o-transition: all @fast ease-in;
+	transition: all @fast ease-in;
+}
+
+.ease-i-wtf {
+	opacity: 0;
+	-moz-transition: all @wtf ease-in;
+	-webkit-transition: all @wtf ease-in;
+	-o-transition: all @wtf ease-in;
+	transition: all @wtf ease-in;
+}
+
+// ease-in-out
+
+.ease-o-snail {
+	opacity: 0;
+	-moz-transition: all @snail ease-out;
+	-webkit-transition: all @snail ease-out;
+	-o-transition: all @snail ease-out;
+	transition: all @snail ease-out;
+}
+
+.ease-o-slow {
+	opacity: 0;
+	-moz-transition: all @slow ease-out;
+	-webkit-transition: all @slow ease-out;
+	-o-transition: all @slow ease-out;
+	transition: all @slow ease-out;
+}
+
+.ease-o-normal {
+	opacity: 0;
+	-moz-transition: all @normal ease-out;
+	-webkit-transition: all @normal ease-out;
+	-o-transition: all @normal ease-out;
+	transition: all @normal ease-out;
+}
+
+.ease-o-fast {
+	opacity: 0;
+	-moz-transition: all @fast ease-out;
+	-webkit-transition: all @fast ease-out;
+	-o-transition: all @fast ease-out;
+	transition: all @fast ease-out;
+}
+
+.ease-o-wtf {
+	opacity: 0;
+	-moz-transition: all @wtf ease-out;
+	-webkit-transition: all @wtf ease-out;
+	-o-transition: all @wtf ease-out;
+	transition: all @wtf ease-out;
+}
+
+// linear
+
+.linear-snail {
+	opacity: 0;
+	-moz-transition: all @snail linear;
+	-webkit-transition: all @snail linear;
+	-o-transition: all @snail linear;
+	transition: all @snail linear;
+}
+
+.linear-slow {
+	opacity: 0;
+	-moz-transition: all @slow linear;
+	-webkit-transition: all @slow ease;
+	-o-transition: all @slow linear;
+	transition: all @slow linear;
+}
+
+.linear-normal {
+	opacity: 0;
+	-moz-transition: all @normal linear;
+	-webkit-transition: all @normal ease;
+	-o-transition: all @normal linear;
+	transition: all @normal linear;
+}
+
+.linear-fast {
+	opacity: 0;
+	-moz-transition: all @fast linear;
+	-webkit-transition: all @fast ease;
+	-o-transition: all @fast linear;
+	transition: all @fast linear;
+}
+
+.linear-wtf {
+	opacity: 0;
+	-moz-transition: all @wtf linear;
+	-webkit-transition: all @wtf ease;
+	-o-transition: all @wtf linear;
+	transition: all @wtf linear;
+}
+
+// animations
+
+// bounce
+.bounce-up {
+	-moz-transform: translate3d(0px, 30px, 0px);
+	-webkit-transform: translate3d(0px, 30px, 0px);
+	-o-transform: translate(0px, 30px);
+	-ms-transform: translate(0px, 30px);
+	transform: translate3d(0px, 30, 0px);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.bounce-up.joScrolled {
+	.postAnimTranslate;
+}
+
+.bounce-down {
+	-moz-transform: translate3d(0px, -30px, 0px);
+	-webkit-transform: translate3d(0px, -30px, 0px);
+	-o-transform: translate(0px, -30px);
+	-ms-transform: translate(0px, -30px);
+	transform: translate3d(0px, -30, 0px);
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.bounce-down.joScrolled {
+	.postAnimTranslate;
+}
+
+// slide left
+.slide-left {
+	-moz-transform: translate3d(-100px, 0px, 0px);
+	-webkit-transform: translate3d(-100px, 0px, 0px);
+	-o-transform: translate(-100px, 0px);
+	-ms-transform: translate(-100px, 0px);
+	transform: translate3d(-100px, 0px, 0px);
+}
+
+.slide-left.joScrolled {
+	.postAnimTranslate;
+}
+
+// slide right
+.slide-right {
+	-moz-transform: translate3d(100px, 0px, 0px);
+	-webkit-transform: translate3d(100px, 0px, 0px);
+	-o-transform: translate(100px, 0px);
+	-ms-transform: translate(100px, 0px);
+	transform: translate3d(100px, 0px, 0px);
+}
+
+.slide-right.joScrolled {
+	.postAnimTranslate;
+}
+
+// fade in
+.fade-in {}
+
+.fade-in.joScrolled {
+	.postAnimTranslate;
+}
+
+// expand
+.expand {
+	transform: scale(0.1, 0.1);
+	transform: scale(0.1, 0.1);
+	-webkit-transform: scale(0.1, 0.1);
+	-webkit-transform: scale(0.1, 0.1);
+}
+
+.expand.joScrolled {
+	.postAnimScale;
+}
