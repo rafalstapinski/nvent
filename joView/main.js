@@ -1,122 +1,152 @@
 $(document).ready(function () {
 
-  // CONFIGURATION HERE
+  // ===================
+  // BEGIN CONFIGURATION
+  // ===================
   var joView = {
-    target: "slider_pic", // target div to store content
-    leftClick: "scrollLeft",
-    rightClick: "scrollRight",
-    pathToJoView: "./joView/viewContent",
-    defaultTimer: 500, // delay of animation unless noted with joTimer attribute
+    joView: "joView", // main container for entire app
+    sliderScreen: "joViewScreen", // slider container for slides
+    slides: "joViewSlides", // target divs to store content
+    leftClick: "joViewLeft", // left button
+    rightClick: "joViewRight", // right button
+    list: "joViewList",
+    pathToJoView: "../joView/viewContent", // path to viewContent folder
+    defaultTimer: 1000, // delay of animation unless noted with joTimer attribute
+    dynamicWidth: true // width of joView dynamic or not?
   };
 
-  var viewContent = [
-    "slider_intro",
-    1,
-    2,
-    "slider_example",
-  ];
-
-  var viewChecker = function (view) {
-    if (typeof viewContent[view] === "number") {
-      return false;
-    } else if (typeof viewContent[view] === "string") {
-      return true;
-    } else {
-      console.log("broken lel");
-    }
+  // List content here in object with "jv#" as key and name of item as the value
+  var viewContent = {
+    "jv1": "slider_intro",
+    "jv2": 1,
+    "jv3": "slider_example",
+    "jv4": 2,
   };
 
-  var index = 0;
+  // ===================
+  // END CONFIGURATION
+  // ===================
 
-  var repeater = function (i) {
-    if (i >= total) {
-      index = 0;
-      return index;
-    } else if (i < 0) {
-      index = total - 1;
-      return index;
-    } else {
-      return index;
-    }
-  };
-
-  var determinator = function () {
-    repeater(index);
-    if (viewChecker(index)) {
-      cont = path + "/views.html #" + viewContent[index];
-      type = "element";
-      return [type, cont];
-    } else {
-      cont = path + "/" + viewContent[index] + ".png";
-      type = "image";
-      return [type, cont];
-    }
-  };
-
-  var slideLeft = function (result) {
-    // takes ./joView/viewContent/ XYZ as param
-    $(replace).animate({
-      marginLeft: '-=938px'
-    }, 350);
-    var elem = 1;
-  };
-  var slideRight = function (result) {
-    // takes ./joView/viewContent/ XYZ as param
-    $(replace).animate({
-      marginLeft: '0px'
-    }, 350);
-  };
-
-  var switchOut = function (result) {
-    $(replace).fadeOut("slow", function () {
-      $(replaceDiv).hide();
-      $(replaceDiv).innerHTML = "";
-      console.log("switchout result: " + result[0]);
-      if (result[0] == "element") {
-        var loadedUrl = String(result[1]);
-        console.log(loadedUrl);
-        var loadedCont = $(replaceDiv).load(loadedUrl);
-        console.log("loaded cont = " + $(loadedCont));
-        replaceDiv.innerHTML = loadedCont;
-        $(replaceDiv.childNodes).hide();
-        //$(replaceDiv).show();
-        //$(replaceDiv.childNodes).fadeIn("slow");
-
-        console.log(replace + " " + "after fadeIn");
-      } else if (result[0] == "image") {
-        var imageReplace = "<div class='replaceCont'><img src='" + result[1] + "' /></div>";
-        console.log(result[1]);
-        console.log(imageReplace);
-        replaceDiv.innerHTML = imageReplace;
-        $(replaceDiv).fadeIn("slow");
-      }
-    });
-  };
-
-  var total = viewContent.length;
-  var replaceDiv = document.getElementById(joView.target);
-  var replace = replaceDiv.childNodes;
-  var left = document.getElementById(joView.leftClick);
-  var right = document.getElementById(joView.rightClick);
+  // Set variables here
+  var $window = $(window);
+  var // content holder
+    contentHolder = document.getElementById(joView.slides), //target scrolling div
+    $contentHolder = $(contentHolder);
+  var
+    slider = document.getElementById(joView.sliderScreen),
+    $slider = $(slider);
+  var // left & right clickers
+    left = document.getElementById(joView.leftClick),
+    $left = $(left),
+    right = document.getElementById(joView.rightClick),
+    $right = $(right);
+  var
+    list = document.getElementById(joView.list);
+  $list = $(list);
   var path = joView.pathToJoView;
-  var cont = "";
-  var type = "";
+  var cont = "null";
+  var type = "null";
+  var payload = "null";
+  var direction = "null";
+
+  // Count how many key:value pairs in viewContent
+  var totalElems = function (obj) {
+    var total = 0;
+    for (var k in obj) {
+      if (obj.hasOwnProperty(k)) {
+        // console.log(k + " -> " + obj[k]);
+        total++;
+      }
+    }
+    return total;
+  };
+
+  // This finds the type of object
+  var viewType = function (key) {
+    var objType = typeof viewContent[key];
+    // console.log("objType " + key + " is a " + objType);
+    return objType;
+  };
+
+  // Injects slides into $contentHolder - numbered with ID and outputs array of allDivs
+  var slideInjector = function (obj, totalSlides) {
+    var
+      beginDiv = "<li class='joViewElement' id='",
+      endDiv = "'></li>",
+      div = "";
+    for (var key in obj) {
+      div = beginDiv + key + endDiv;
+      $list.append(div);
+    }
+  };
+
+  // Injects the content into the already injected views. takes totalElems as param
+  var viewInjector = function (totalViews, obj) {
+    var injected = slideInjector(viewContent, totalViews);
+    for (var key in obj) {
+      divId = key;
+      div = document.getElementById(divId);
+      if (viewType(key) === "string") {
+        cont = String(path + "/views.html #" + obj[divId]);
+        type = "string";
+        payload = $(div).load(cont);
+        $(div).html(payload);
+      } else {
+        cont = String(path + "/" + obj[divId] + ".png");
+        type = "image";
+        payload = "<img src='" + cont + "' />";
+        $(div).html(payload);
+      }
+    }
+  };
+
+  viewInjector(totalElems(viewContent), viewContent);
+  $('#' + joView.list + " li:last-child").prependTo('#' + joView.list);
 
 
-  left.addEventListener('click', function () {
-    index--;
-    switchOut(determinator());
-    console.log(index);
+  $left.click(function () {
+    slideWidth = document.getElementById(joView.sliderScreen).offsetWidth;
+    $("#" + joView.list).animate({
+      "left": +slideWidth
+    }, 500, function () {
+      $("#" + joView.list + " li:last-child").prependTo($list);
+      $("#" + joView.list).css('left', '');
+    });
   });
 
-  right.addEventListener('click', function () {
-    index++;
-    switchOut(determinator());
-    console.log(index);
+  $right.click(function () {
+    slideWidth = document.getElementById(joView.sliderScreen).offsetWidth;
+    $("#" + joView.list).animate({
+      "left": -slideWidth
+    }, 500, function () {
+      $("#" + joView.list + " li:first-child").appendTo($list);
+      $("#" + joView.list).css('left', '');
+    });
   });
 
 
+  // Resizing the dynamic view
+  var slideWidth = document.getElementById(joView.sliderScreen).offsetWidth;
+  var sliderWidth = totalElems(viewContent) * slideWidth;
 
+  var resizeSlides = function () {
+    slideWidth = document.getElementById(joView.sliderScreen).offsetWidth;
+    sliderWidth = totalElems(viewContent) * slideWidth;
+    $(".joViewElement").css("width", slideWidth);
+    $("#" + joView.slides).css("width", sliderWidth);
+    $("#" + joView.list).css({
+      width: sliderWidth,
+      marginLeft: -slideWidth
+    });
+    // console.log("width: " + slideWidth);
+  };
 
+  if (joView.dynamicWidth === true) {
+    resizeSlides();
+    $window.on('resize', resizeSlides);
+  } else if (joView.dynamicWidth === false) {
+    resizeSlides();
+    // console.log("width: " + slideWidth);
+  }
 
 });

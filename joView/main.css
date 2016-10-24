@@ -1,5 +1,85 @@
-.replaceCont{
-	position:relative;
-	width:100%;
-	height:100%;
+.joView {
+  margin: auto;
+  position: relative;
+  width: 100%;
+}
+
+.joViewScreen {
+  position: relative;
+  margin:auto;
+	display:inline-block;
+  width: 80%;
+  overflow: hidden;
+	vertical-align: middle;
+  background:#FFF;
+  border:3px solid #909090;
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+  -moz-box-shadow:    inset 0px 0px 8px #000000;
+   -webkit-box-shadow: inset 0px 0px 8px #000000;
+   box-shadow:         inset 0px 0px 8px #000000;
+}
+
+.joViewSlides {
+  position: relative;
+	display:table;
+  margin: auto;
+  text-align: left;
+}
+
+ul.joViewList{
+  position:relative;
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+
+ul.joViewList > li {
+}
+
+.joViewElement {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table-cell;
+  vertical-align: top;
+}
+
+.joViewElement>img {
+  width: 100%;
+  vertical-align: top;
+
+  border-top-left-radius:15px;
+  border-top-right-radius:15px;
+}
+
+.joViewElement>div {
+  width: 100%;
+  height: 100%;
+}
+
+.joViewLeft, .joViewRight {
+  display:inline-block;
+  text-align:center;
+	width:10%;
+  color: #2ecc71;
+  cursor: pointer;
+  z-index: 10;
+	transition: 0.1s ease-in-out;
+	vertical-align: middle;
+	margin:-2px;
+  top:35%;
+}
+
+
+
+.joViewLeft:hover, .joViewRight:hover {
+  color: #27ae60;
+}
+
+.joViewLeft>span, .joViewRight>span {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	font-size:7em;
 }

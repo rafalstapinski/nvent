@@ -40,13 +40,18 @@
   transition: all 0.1s ease;
 }
 
-.transition-slow{
+.transition-slow {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
+.vertAlign {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
 // spec
 .menu_wrap {
   position: fixed;
@@ -137,127 +142,96 @@
   background: url('../images/debut_light.png') center center;
   //background: url(../images/bg_light.jpg) no-repeat center center fixed;
   //.cover_background;
-  .slider_view {
+  .sliderContainer {
+    max-width: 1920px;
+    position: relative;
+    margin: auto;
+    padding: 30px;
     text-align: center;
-    max-width: 1260px;
+
+    .slider_text {
+      text-align: center;
+
+      h1 {
+        font-size: 4em;
+        font-family: @titleFontTwo;
+        color: @brown;
+        padding-bottom: 30px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h2 {
+        font-size: 4em;
+        font-family: @titleFontTwo;
+        color: @brown;
+        padding-bottom: 30px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 2em;
+        font-family: @titleFontOne;
+        color: @text_light;
+        padding-bottom: 17px;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      b {
+        color: @primary_dark;
+        font-weight: normal;
+      }
+
+      .button {
+        text-decoration: none;
+        display: inline-block;
+        font-size: 0.4em;
+        color: #fff;
+        width: 170px;
+        height: 60px;
+        border-radius: 3px;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 20px;
+        text-align: center;
+        font-family: 'Dosis', sans-serif;
+        background: @primary_dark;
+        cursor: pointer;
+        margin: 20px auto auto;
+
+        &:hover {
+          background: @primary;
+        }
+      }
+
+      .custom_service {
+        background: @dark_gray;
+
+        &:hover {
+          background: @gray;
+        }
+      }
+    }
+
+  }
+
+  .sliderBottom {
+    width: 80%;
     margin: auto;
 
-    p {
-      padding-top: 20px;
-      font-family: 'Dosis', sans-serif;
-      font-size: 1.4em;
-      color: @text_light;
-      margin: 0;
+    img {
+      width: 100%;
     }
+  }
 
-    .slider_left,
-    .slider_right {
-      display: inline-block;
-      vertical-align: middle;
-      padding: 15px;
-      color: @primary;
-      border-radius: 5px;
-      line-height: 80px;
-      font-size: 5em;
-      cursor: pointer;
-      .transition-slow;
-
-      &:hover {
-        color: @primary_dark;
-      }
-    }
-
-    .slider_content {
-      position: relative;
-      width: calc(100% - 15px);
-      display: inline-block;
-      vertical-align: middle;
-      text-align: center;
-      max-width: 1920px;
-      max-height: auto;
-
-      img {
-        width: 100%;
-      }
-
-      .slider_pic {
-        position: absolute;
-        height: calc(66% + 0.2px);
-        width: 100%;
-        background: #fff;
-        top: 0%;
-        left: 0%;
-        color: #FFF;
-        font-size: 5em;
-        -moz-box-shadow: inset 0 0 5px #808080;
-        -webkit-box-shadow: inset 0 0 5px #808080;
-        box-shadow: inset 0 0 5px #808080;
-        border:2px solid #909090;
-        border-top-right-radius: 25px;
-        border-top-left-radius:25px;
-
-        .slider_intro {
-          position: relative;
-          top: 50%;
-          transform: translateY(-50%);
-
-          h1 {
-            font-size: 0.8em;
-            font-family: @titleFontTwo;
-            color: @brown;
-            padding-bottom: 30px;
-            font-weight: normal;
-            margin: 0;
-          }
-
-          h3 {
-            font-size: 0.4em;
-            font-family: @titleFontOne;
-            color: @text_light;
-            padding-bottom: 17px;
-            font-weight: normal;
-            margin: 0;
-
-            b {
-              color: @primary_dark;
-              font-weight: normal;
-            }
-          }
-
-          .button {
-            text-decoration: none;
-            display: inline-block;
-            font-size: 0.4em;
-            color: #fff;
-            width: 170px;
-            height: 60px;
-            border-radius: 3px;
-            font-size: 20px;
-            line-height: 20px;
-            padding: 20px;
-            text-align: center;
-            font-family: 'Dosis', sans-serif;
-            background: @primary_dark;
-            cursor: pointer;
-            margin: auto;
-
-            &:hover {
-              background: @primary;
-            }
-          }
-
-          .custom_service {
-            background: @dark_gray;
-
-            &:hover{
-              background: @gray;
-            }
-          }
-
-        }
-
-      }
-    }
+  p {
+    padding-top: 20px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.4em;
+    color: @text_light;
+    margin: 0;
   }
 }
 
@@ -344,7 +318,7 @@
 
   b {
     color: @primary_dark;
-    font-weight:normal;
+    font-weight: normal;
   }
 
   .services_list {
