@@ -1,4 +1,4 @@
-Site under development at https://nvent.xyz
+Site under development at https:/stapinski.co/p/nvent
 
 =============================
 information
